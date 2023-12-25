@@ -1,0 +1,267 @@
+/*폰트*/
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+body {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+}
+/*basic*/
+:root {
+  --theme-color: #5BC0F8;
+  --first-color: #5BC0F8;
+  --second-color: #2FA007;
+  --third-color: #FFC368;
+}
+
+
+
+/*swiper css*/
+
+
+
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*스크린 리더 전용*/
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/*keyframe*/
+@keyframes main-bg {
+  from{
+    scale: 1;
+  }
+  to{
+    scale: 1.2;
+  }
+}
+
+@keyframes pointer-spin{
+  from{
+    transform: perspective(100px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(100px) rotateY(360deg);
+}
+}
+
+@keyframes swiper-button-prev {
+  from{
+    background: url(../asset/prev.svg)no-repeat 40px 0/contain;
+    opacity: 0;
+  }
+  to{
+    background: url(../asset/prev.svg)no-repeat 0 0/contain;
+    opacity: 1;
+  }
+}
+@keyframes swiper-button-next {
+  from{
+    background: url(../asset/prev.svg)no-repeat -40px 0/contain;
+    opacity: 0;
+  }
+  to{
+    background: url(../asset/prev.svg)no-repeat 0 0/contain;
+    opacity: 1;
+  }
+}
+
+
+/*main*/
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.main-bg {
+  background: url(../asset/bg_sea.jpg)no-repeat 0 0 / cover ;
+  width: 100%;
+  height: 100vh;
+  animation: main-bg 30s infinite ;
+  filter: blur(5px);
+  
+}
+
+.ad-section {
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ad-figure {
+  width: 70%;
+  height: 700px;
+  border-radius: 24px 24px 0px 0px;
+  background: url(../asset/background_pattern.png)no-repeat 0 170px ,linear-gradient(180deg, var(--theme-color) 70.31%, rgba(255, 255, 255, 0.30) 100%);
+  padding: 40px;
+
+}
+.ad-figure .logo {
+  width: 250px;
+  margin: 0 auto;
+}
+figcaption {
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+.ad-swiper{
+  width: 50%;
+  height: 400px;
+  margin-top: 40px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.10);
+
+}
+.ad-swiper img:hover {
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+.custom-pagination {
+  position: absolute;
+  z-index: 1;
+  bottom: 10%;
+  display: flex;
+  gap: 1vw;
+
+}
+
+
+.custom-button  {
+  background: url(../asset/prev.svg)no-repeat 0 0/contain;
+  position: absolute;
+  z-index: 10;
+  width: 90px;
+  height: 40px;
+  border: none;
+}
+.custom-button:hover {
+  cursor: pointer;
+}
+.custom-button.custom-button-prev{
+  left: 40px;
+}
+.custom-button.custom-button-prev:hover{
+  animation: swiper-button-prev 1.2s infinite ease-out;
+}
+
+.custom-button.custom-button-next {
+  right: 40px;
+  transform: rotate(180deg);
+}
+
+.custom-button.custom-button-next:hover{
+  animation: swiper-button-prev 1.2s infinite ease-out;
+}
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.swiper-pagination-bullet {
+  border-radius: 300px;
+  border: 1px solid var(--theme-color);
+  width: 85px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  color: var(--theme-color);
+  font-weight: 500;
+  transition: 0.5s;
+}
+.custom-pagination span:hover, .swiper-pagination-bullet-active{
+  transform: scale(1.1);
+  background: var(--theme-color);
+  color: #fff;
+  cursor: pointer;
+}
+.custom-pagination span:hover::before, .swiper-pagination-bullet-active::before{
+  content: "";
+  background: url(../asset/pointer.svg)no-repeat 0 0 /contain;
+  width: 20px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: -32px;
+  left: 30px;
+  animation: pointer-spin 2s infinite ease-out;
+}
+
+.custom-pagination span:nth-child(1):after{ content: "바다"; }
+.custom-pagination span:nth-child(2):after{ content: "산"; }
+.custom-pagination span:nth-child(3):after{ content: "사 막"; }
+
+
+.swiper-bg {
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(180deg, #FFF 70.31%, rgba(255, 255, 255, 0.30) 100%);
+  position: absolute;
+  bottom: 0;
+}
+
+/*ad-img-box*/
+
+.ad-imgs-box{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  transform: translateY(-100vh);
+}
+.ad-imgs-box .close{
+  border: 2px solid #fff;
+  background: none;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+.ad-imgs-box .close:hover{
+  cursor:pointer;
+  background: #fff;
+  color: #999;
+}
+.ad-imgs {
+  width: 70%;
+  height: 700px;
+  border-radius: 14px;
+}
+.ad-imgs-box.is-active{
+  transform: none;
+}
+
+
+
+
