@@ -4,7 +4,6 @@ const swiperImage = document.querySelector(".ad-img");
 const closeButton = Array.from(document.querySelectorAll(".close"));
 
 // console.log(imgBoxStyles);
-console.log(swiperBox[0].classList);
 
 function handleClick(e) {
   let targetImg = e.target.closest(".swiper-slide");

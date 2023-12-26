@@ -17,23 +17,6 @@ var swiper = new Swiper(".ad-swiper", {
     nextEl: ".custom-button-next",
     prevEl: ".custom-button-prev",
   },
-  on: {
-    // activeIndexChange: function () {
-    //   if (this.activeIndex === 1) {
-    //     adFigure.style.setProperty("--theme-color", "#5BC0F8");
-    //   }
-    // },
-    // activeIndexChange: function () {
-    //   if (this.activeIndex === 2) {
-    //     adFigure.style.setProperty("--theme-color", "#2FA007");
-    //   }
-    // },
-    // activeIndexChange: function () {
-    //   if (this.activeIndex === 2) {
-    //     adFigure.style.setProperty("--theme-color", "#FFC368");
-    //   }
-    // },
-  },
 });
 
 var swiper4 = new Swiper(".ad-imgs-sea", {
